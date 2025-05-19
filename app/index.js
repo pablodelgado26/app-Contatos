@@ -7,12 +7,6 @@ export default function WelcomeScreen() {
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity
-                style={styles.menuButton}
-                onPress={() => navigation.openDrawer()}
-            >
-                <Ionicons name="menu" size={24} color="#fff" />
-            </TouchableOpacity>
             <Ionicons name="people-circle-outline" size={96} color="#6200ee" style={{ marginBottom: 24 }} />
 
             <Text style={styles.title}>Bem-vindo ao FamilyOrganizer</Text>
@@ -40,16 +34,6 @@ const styles = StyleSheet.create({
         padding: 24,
         justifyContent: "center",
         alignItems: "center",
-    },
-    menuButton: {
-        position: "absolute",
-        top: 26,
-        left: 16,
-        zIndex: 1,
-        backgroundColor: "#6200ee",
-        borderRadius: 24,
-        padding: 8,
-        elevation: 2,
     },
     title: {
         fontSize: 24,

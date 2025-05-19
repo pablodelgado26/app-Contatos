@@ -70,12 +70,6 @@ export default function HomeScreen() {
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity
-                style={styles.menuButton}
-                onPress={() => navigation.openDrawer()}
-            >
-                <Ionicons name="menu" size={24} color="#fff" />
-            </TouchableOpacity>
 
             <Pressable
                 onPress={() => {
@@ -179,16 +173,6 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 8,
         backgroundColor: "#fff",
-    },
-    menuButton: {
-        position: "absolute",
-        top: 26,
-        left: 16,
-        zIndex: 1,
-        backgroundColor: "#6200ee",
-        borderRadius: 24,
-        padding: 8,
-        elevation: 2,
     },
     addButton: {
         backgroundColor: "#6200ee",

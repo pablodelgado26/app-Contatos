@@ -8,9 +8,9 @@ export default function Layout() {
         <GestureHandlerRootView style={{ flex: 1 }}>
             <Drawer>
                 <Drawer.Screen
-                    name="index"
+                    name="home"
                     options={{
-                        drawerLabel: "Início",
+                        drawerLabel: "Inicio",
                         title: "Home",
                         headerShown: false,
                         headerLeft: true,
@@ -44,20 +44,28 @@ export default function Layout() {
                     options={{
                         drawerLabel: "register",
                         title: "register",
-                         drawerItemStyle: { display: 'none' }, 
-                          headerShown: false,
+                        drawerItemStyle: { display: 'none' },
+                        headerShown: false,
                     }}
-                    
+
                 />
                 <Drawer.Screen
                     name="login"
                     options={{
                         drawerLabel: "login",
                         title: "login",
-                         drawerItemStyle: { display: 'none' }, 
-                          headerShown: false,
+                        drawerItemStyle: { display: 'none' },
+                        headerShown: false,
                     }}
-                    
+                />
+                <Drawer.Screen
+                    name="index"
+                    options={{
+                        drawerLabel: "index",
+                        title: "index",
+                        drawerItemStyle: { display: 'none' },
+                        headerShown: false,
+                    }}
                 />
             </Drawer>
         </GestureHandlerRootView>

@@ -63,7 +63,7 @@ export default function RegisterScreen() {
           onChangeText={setPassword}
         />
 
-        <TouchableOpacity style={styles.button} onPress={handleRegister}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("home")}>
           <Text style={styles.buttonText}>Registrar</Text>
         </TouchableOpacity>
 
