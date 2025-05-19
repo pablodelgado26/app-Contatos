@@ -1,48 +1,36 @@
 import { useState } from "react";
 import {
+  View,
   Text,
   TextInput,
   TouchableOpacity,
   StyleSheet,
-  ScrollView
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-export default function RegisterScreen() {
+export default function LoginScreen() {
   const navigation = useNavigation();
 
-  const [name, setName] = useState("");
-  const [age, setAge] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleRegister() {
-    // Aqui depois você faz a requisição para sua API
-    console.log({ name, age, email, password });
-    // Após registrar, pode navegar para login ou direto pro app
-    navigation.navigate("Login");
+  function handleLogin() {
+    // Aqui depois você vai fazer a requisição para sua API
+    console.log({ email, password });
+    // Exemplo: se login for bem-sucedido, entra no app:
+    navigation.navigate("Drawer");
   }
 
   return (
+    <KeyboardAvoidingView
+      style={{ flex: 1, backgroundColor: "#fff" }}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+    >
       <ScrollView contentContainerStyle={styles.container}>
-        <Text style={styles.title}>Crie sua conta</Text>
-
-        <TextInput
-          style={styles.input}
-          placeholder="Nome"
-          placeholderTextColor="#aaa"
-          value={name}
-          onChangeText={setName}
-        />
-
-        <TextInput
-          style={styles.input}
-          placeholder="Idade"
-          placeholderTextColor="#aaa"
-          keyboardType="numeric"
-          value={age}
-          onChangeText={setAge}
-        />
+        <Text style={styles.title}>Entrar</Text>
 
         <TextInput
           style={styles.input}
@@ -63,14 +51,18 @@ export default function RegisterScreen() {
           onChangeText={setPassword}
         />
 
-        <TouchableOpacity style={styles.button} onPress={handleRegister}>
-          <Text style={styles.buttonText}>Registrar</Text>
+        <TouchableOpacity style={styles.button} onPress={handleLogin}>
+          <Text style={styles.buttonText}>Entrar</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.navigate("login")}>
-          <Text style={styles.loginText}>Já tem uma conta? <Text style={{ color: "#6200ee", fontWeight: "bold" }}>Entrar</Text></Text>
+        <TouchableOpacity onPress={() => navigation.navigate("register")}>
+          <Text style={styles.registerText}>
+            Ainda não tem uma conta?{" "}
+            <Text style={{ color: "#6200ee", fontWeight: "bold" }}>Registrar</Text>
+          </Text>
         </TouchableOpacity>
       </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 
@@ -111,7 +103,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
   },
-  loginText: {
+  registerText: {
     textAlign: "center",
     color: "#666",
     fontSize: 15,
