@@ -40,6 +40,16 @@ export default function Layout() {
                     }}
                 />
                 <Drawer.Screen
+                    name="user"
+                    options={{
+                        drawerLabel: "Perfil",
+                        title: "Perfil",
+                        drawerIcon: ({ size, color }) => (
+                            <AntDesign name="user" size={size} color={color} />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
                     name="register"
                     options={{
                         drawerLabel: "register",
