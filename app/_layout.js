@@ -1,6 +1,7 @@
 import { Drawer } from "expo-router/drawer";
 import IonIcons from "react-native-vector-icons/Ionicons";
 import AntDesign from '@expo/vector-icons/AntDesign';
+import Entypo from '@expo/vector-icons/Entypo';
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export default function Layout() {
@@ -36,6 +37,16 @@ export default function Layout() {
                         title: "Contatos",
                         drawerIcon: ({ size, color }) => (
                             <AntDesign name="contacts" size={size} color={color} />
+                        ),
+                    }}
+                />
+                 <Drawer.Screen
+                    name="addresses"
+                    options={{
+                        drawerLabel: "Endereços",
+                        title: "Endereços",
+                        drawerIcon: ({ size, color }) => (
+                            <Entypo name="address" size={size} color={color} />
                         ),
                     }}
                 />
