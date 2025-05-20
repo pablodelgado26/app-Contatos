@@ -6,11 +6,11 @@ export default function HomeScreen() {
     const navigation = useNavigation();
 
     const features = [
-        { label: "Contatos", icon: "people" },
-        { label: "Consultas", icon: "medkit" },
-        { label: "Endereços", icon: "location" },
-        { label: "Tarefas", icon: "checkmark-done" },
-        { label: "Anotações", icon: "document-text" },
+        { label: "Contatos", icon: "people", screen: "contacts" },
+        { label: "Consultas", icon: "medkit", screen: "consultation" },
+        { label: "Endereços", icon: "location", screen: "Enderecos" },
+        { label: "Tarefas", icon: "checkmark-done", screen: "Tarefas" },
+        { label: "Anotações", icon: "document-text", screen: "Anotacoes" },
     ];
 
     return (
@@ -21,6 +21,7 @@ export default function HomeScreen() {
             >
                 <Ionicons name="menu" size={24} color="#fff" />
             </TouchableOpacity>
+
             <Text style={styles.title}>Bem-vindo ao FamilyOrganizer</Text>
             <Text style={styles.subtitle}>Tudo o que sua família precisa, em um só lugar.</Text>
 
@@ -29,10 +30,7 @@ export default function HomeScreen() {
                     <TouchableOpacity
                         key={item.label}
                         style={styles.featureCard}
-                        onPress={() => {
-                            // Depois você pode redirecionar para as telas específicas
-                            console.log("Abrir", item.label);
-                        }}
+                        onPress={() => navigation.navigate(item.screen)}
                     >
                         <Ionicons name={item.icon} size={32} color="#6200ee" />
                         <Text style={styles.featureText}>{item.label}</Text>
@@ -42,6 +40,7 @@ export default function HomeScreen() {
         </ScrollView>
     );
 }
+
 
 const styles = StyleSheet.create({
     container: {

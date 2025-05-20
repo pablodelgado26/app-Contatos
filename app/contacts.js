@@ -11,7 +11,6 @@ import {
     StyleSheet,
     TouchableOpacity,
 } from "react-native";
-import Ionicons from "@expo/vector-icons/Ionicons";
 import ContactItem from "../components/ContactItem";
 
 const CATEGORIES = ["Trabalho", "Pessoal", "Família"];

@@ -20,6 +20,16 @@ export default function Layout() {
                     }}
                 />
                 <Drawer.Screen
+                    name="consultation"
+                    options={{
+                        drawerLabel: "Consultas",
+                        title: "Consultas",
+                        drawerIcon: ({ size, color }) => (
+                            <IonIcons name="medkit" size={size} color={color} />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
                     name="contacts"
                     options={{
                         drawerLabel: "Contatos",
