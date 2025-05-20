@@ -40,13 +40,23 @@ export default function Layout() {
                         ),
                     }}
                 />
-                 <Drawer.Screen
+                <Drawer.Screen
                     name="addresses"
                     options={{
                         drawerLabel: "Endereços",
                         title: "Endereços",
                         drawerIcon: ({ size, color }) => (
                             <Entypo name="address" size={size} color={color} />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name="tasks"
+                    options={{
+                        drawerLabel: "Tarefas",
+                        title: "Tarefas",
+                        drawerIcon: ({ size, color }) => (
+                            <IonIcons name="tasks" size={size} color={color} />
                         ),
                     }}
                 />
