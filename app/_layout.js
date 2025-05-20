@@ -1,7 +1,9 @@
 import { Drawer } from "expo-router/drawer";
 import IonIcons from "react-native-vector-icons/Ionicons";
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Entypo from '@expo/vector-icons/Entypo';
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export default function Layout() {
@@ -17,6 +19,16 @@ export default function Layout() {
                         headerLeft: true,
                         drawerIcon: ({ size, color }) => (
                             <IonIcons name="home" size={size} color={color} />
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    name="annotations"
+                    options={{
+                        drawerLabel: "Anotações",
+                        title: "Anotações",
+                        drawerIcon: ({ size, color }) => (
+                            <MaterialIcons name="notes" size={size} color={color} />
                         ),
                     }}
                 />
@@ -56,7 +68,7 @@ export default function Layout() {
                         drawerLabel: "Tarefas",
                         title: "Tarefas",
                         drawerIcon: ({ size, color }) => (
-                            <IonIcons name="tasks" size={size} color={color} />
+                            <FontAwesome5 name="tasks" size={size} color={color} />
                         ),
                     }}
                 />

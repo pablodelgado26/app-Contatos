@@ -10,7 +10,7 @@ export default function HomeScreen() {
         { label: "Consultas", icon: "medkit", screen: "consultation" },
         { label: "Endereços", icon: "location", screen: "addresses" },
         { label: "Tarefas", icon: "checkmark-done", screen: "tasks" },
-        { label: "Anotações", icon: "document-text", screen: "Anotacoes" },
+        { label: "Anotações", icon: "document-text", screen: "annotations" },
     ];
 
     return (
